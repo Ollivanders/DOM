@@ -1,0 +1,178 @@
+[alias]
+
+####################################################################################################
+#  git-open gitlab
+pipeline = open --suffix -/pipeline
+mergerequests = open --suffix -/merge_requests
+
+####################################################################################################
+# frequent/best aliases
+log = "log --graph --pretty=format:'%Cred%h%Creset %an: %s - %Creset %C(yellow)%d%Creset %Cgreen(%cr)%Creset' --abbrev-commit --date = relative"
+prev = log -1
+prevsum = show --summary
+
+# show git aliases
+aliases = "!git config -l | grep ^alias\\. | cut -c 7-"
+
+rhh = reset --hard HEAD
+f = fetch --all
+ac = add . && commit -am
+lrb = "!f() { \
+        remote=\"${1:-origin}\"; \
+        git ls-remote --heads \"$remote\"; \
+        }; f"
+s = status -sb
+sl = status -b
+branches = branch -a
+# history
+hist = log --graph --abbrev-commit --decorate --date=relative --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(bold yellow)%d%C(reset)' --all
+ua = !git add --all && git commit --amend --no-edit
+conflicts = !git diff --name-only --diff-filter=U
+# Start web-based visualizer.
+w = instaweb --httpd=webrick
+promote = !$DOTFILES/bin/git/git-promote
+wtf = !$DOTFILES/bin/git/gwtf
+rank-contributors = !$DOTFILES/bin/git-rank-contributors
+count = !git shortlog -sn
+mergeinto = !sh -c '_CURRENT_BRANCH=$(git symbolic-ref --short HEAD) && git checkout $1 && git merge $_CURRENT_BRANCH && git checkout $_CURRENT_BRANCH' -
+mergetheirs = merge --strategy-option theirs
+
+# rebasing
+rba = rebase --abort
+rbc = "!f(){ git add -A && git rebase --continue; }; f"
+re = "!f(){ DEFAULT=$(git default); git fetch origin && git rebase origin/${1-$DEFAULT}; }; f"
+sync = !git pull --rebase && git push
+
+####################################################################################################
+# Commit emojis
+acmp = "!f() { git add .; git commit -m \"$@\"; git push; }; f"
+amp = "!f() { git add .; git commit --amend -m \"$@\"; git push; }; f"
+
+
+ref = "!f() { git commit -m \"♻️ REFACTOR: $@\"; }; f"
+add = "!f() { git commit -m \"➕ ADD: $@\"; }; f"
+new = "!f() { git commit -m \"📦 NEW: $@\"; }; f"
+chg = "!f() { git commit -m \"🔺 CHANGE: $@\"; }; f"
+wip = "!f() { git commit -m \"🚧 WIP: $@\"; }; f"
+imp = "!f() { git commit -m \"👌 IMPROVE: $@\"; }; f"
+fix = "!f() { git commit -m \"🐛 FIX: $@\"; }; f"
+rlz = "!f() { git commit -m \"🚀 RELEASE: $@\"; }; f"
+doc = "!f() { git commit -m \"📖 DOC: $@\"; }; f"
+tst = "!f() { git commit -m \"🤖 TEST: $@\"; }; f"
+brk = "!f() { git commit -m \"⚠️ BREAKING: $@\"; }; f"
+
+
+commitref = "!f() { git acmp \"♻️ REFACTOR: $@\"; }; f"
+commitadd = "!f() { git acmp \"➕ ADD: $@\"; }; f"
+commitnew = "!f() { git acmp \"📦 NEW: $@\"; }; f"
+commitchg = "!f() { git acmp \"🔺 CHANGE: $@\"; }; f"
+commitwip = "!f() { git acmp \"🚧 WIP: $@\"; }; f"
+commitimp = "!f() { git acmp \"👌 IMPROVE: $@\"; }; f"
+commitfix = "!f() { git acmp \"🐛 FIX: $@\"; }; f"
+commitrlz = "!f() { git acmp \"🚀 RELEASE: $@\"; }; f"
+commitdoc = "!f() { git acmp \"📖 DOC: $@\"; }; f"
+committst = "!f() { git acmp \"🤖 TEST: $@\"; }; f"
+commitbrk = "!f() { git acmp \"⚠️ BREAKING: $@\"; }; f"
+
+amendref = "!f() { git amp \"♻️ REFACTOR: $@\"; }; f"
+amendadd = "!f() { git amp \"➕ ADD: $@\"; }; f"
+amendnew = "!f() { git amp \"📦 NEW: $@\"; }; f"
+amendchg = "!f() { git amp \"🔺 CHANGE: $@\"; }; f"
+amendwip = "!f() { git amp \"🚧 WIP: $@\"; }; f"
+amendimp = "!f() { git amp \"👌 IMPROVE: $@\"; }; f"
+amendfix = "!f() { git amp \"🐛 FIX: $@\"; }; f"
+amendrlz = "!f() { git amp \"🚀 RELEASE: $@\"; }; f"
+amenddoc = "!f() { git amp \"📖 DOC: $@\"; }; f"
+amendtst = "!f() { git amp \"🤖 TEST: $@\"; }; f"
+amendbrk = "!f() { git amp \"⚠️ BREAKING: $@\"; }; f"
+
+####################################################################################################
+# Short bois
+a = add
+ap = add -p
+b = branch
+ca = commit -a
+# ca = !git add --all && git commit
+c = commit --verbose
+ca = commit -a --verbose
+cm = commit -m
+cam = commit -a -m
+
+co = checkout
+cob = checkout -b
+ac = add -A && commit -m
+e = -edit-new
+p = push origin HEAD
+pa = pull --all
+m = commit --amend --verbose
+d = diff -- . ':!*package-lock.json' ':!*yarn.lock'
+ds = diff --stat
+dc = diff --cached -- . ':!*package-lock.json' ':!*yarn.lock'
+r = rebase
+p = push
+pf = push --force
+# list branches sorted by last modified
+subupdate = submodule update --remote --merge
+
+rao = remote add origin
+pushitgood = push -u origin --all
+undo-commit = reset --soft HEAD-1
+lpp = pull --prune
+# Allow `$ git git git...`
+git = !exec git
+# Show custom log of the commit history.
+# List contributors.
+lc = shortlog --email --numbered --summary
+# List remote branches.
+
+# Remove last commits (by default it removes the last commit).
+rlc = "!f() { \
+        number_of_commits=\"${1:-1}\"; \
+        git reset --hard \"HEAD~$number_of_commits\"; \
+        }; f"
+
+
+####################################################################################################
+# More complicated examples, still experimental
+abort = rebase --abort
+amend = commit -a --amend
+# Deletes all branches merged into the specified branch (or the default branch if no branch is specified)
+bclean = "!f() { DEFAULT=$(git default); git branch --merged ${1-$DEFAULT} | grep -v " ${1-$DEFAULT}$" | xargs git branch -d; }; f"
+# Switches to specified branch (or the dafult branch if no branch is specified), runs git up, then runs bclean.
+bdone = "!f() { DEFAULT=$(git default); git checkout ${1-$DEFAULT} && git up && git bclean ${1-$DEFAULT}; }; f"
+# Lists all branches including remote branches
+browse = !git open
+# Lists the files with the most churn
+churn = !git --no-pager log --name-only --oneline | grep -v ' ' | sort | uniq -c | sort -nr | head
+cleanup = clean -xdf -e *.DotSettings* -e s3_keys.ps1
+# Show list of files in a conflict state.
+default = !git symbolic-ref refs/remotes/origin/HEAD | sed 's@^refs/remotes/origin/@@'
+delete = branch -d
+# Discard changes to a file
+discard = checkout --
+ec = config --global -e
+find = "!git ls-files | grep -i"
+grep = grep -Ii
+# Shows the commit message and files changed from the latest commit
+latest = "!git ll -1"
+lds = log --pretty=format:"%C(yellow)%h\\ %ad%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --date=short
+lost = fsck --lost-found
+# A better git log.
+ls = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate
+# Moves a set of commits from the current branch to another
+migrate = "!f(){ DEFAULT=$(git default); CURRENT=$(git symbolic-ref --short HEAD); git checkout -b $1 && git branch --force $CURRENT ${3-$CURRENT@{u}} && git rebase --onto ${2-$DEFAULT} $CURRENT; }; f"
+new = !git init && git symbolic-ref HEAD refs/heads/main
+open = "!f(){ URL=$(git config remote.origin.url); open ${URL%.git}; }; f"
+pr = "!f(){ URL=$(git config remote.origin.url); open ${URL%.git}/compare/$(git rev-parse --abbrev-ref HEAD); }; f"
+publish = "!f() { git push origin $1 && git push drafts :$1 && git browse; }; f"
+
+remotes = remote -v
+restore = "!f(){ git add -A && git commit -qm 'RESTORE SAVEPOINT'; git reset $1 --hard; }; f"
+ri = "!f(){ DEFAULT=$(git default); git fetch origin && git rebase --interactive origin/${1-$DEFAULT}; }; f"
+save = !git add -A && git commit -m 'SAVEPOINT'
+setorigin = remote set-url origin
+setupstream = remote set-url upstream
+stashes = stash list
+undo = reset HEAD~1 --mixed
+wip = commit -am "WIP"
+wipe = "!f() { rev=$(git rev-parse ${1-HEAD}); git add -A && git commit --allow-empty -qm 'WIPE SAVEPOINT' && git reset $rev --hard; }; f"

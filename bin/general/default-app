@@ -1,0 +1,18 @@
+#!/bin/bash
+#
+# sets the default app for an extension <app> <ext>
+
+set -e
+
+if [[ "$OSTYPE" =~ "linux-gnu"* ]]; then # Linux
+    if grep -q Microsoft /proc/version; then
+      echo "wsl"
+    else
+      echo "linux"
+    fi
+elif [[ "$OSTYPE" =~ "darwin"* ]]; then #macOS
+  echo "macos"
+else
+    echo "Sorry ${OSTYPE} unsupported"
+    exit 0
+fi

@@ -1,0 +1,14 @@
+git/gitconfig**
+hooks
+docs/imageBoard.key
+git/functions.bzsh
+zsh/p10k.zsh.symlink
+bin/local/*
+system/local.bzsh
+# *local*
+zsh/ohmyzsh/*
+zsh/custom/plugins/zsh-syntax-highlighting/*
+zsh/custom/plugins/zsh-autosuggestions/*
+local/**
+.vscode/*
+**/[Ll]ocal*

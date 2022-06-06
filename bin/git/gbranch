@@ -1,0 +1,10 @@
+#!/bin/sh
+#
+# shortcut for making a new branch from a jira ticket and pushing it
+
+JIRA_TICKET=$1
+TEXT_NAME=$2
+BRANCH_NAME="feature/${TEXT_NAME}-PLT-${JIRA_TICKET}"
+
+git checkout -b $BRANCH_NAME
+git push --set-upstream origin $BRANCH_NAME

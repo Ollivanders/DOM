@@ -1,0 +1,27 @@
+# this file is for alaises where I can't be bothered to prepend with a space for the g
+
+alias g='git'
+alias gs='g s'   # who needs gs for ghostscript anyway
+alias gf='g f'  
+alias gsl='g sl'
+alias ghist='g hist'
+alias gco='g checkout'
+alias gcob='g checkout -b'
+alias gw='g w'
+alias grgg='g rhh'
+alias gprev="g prev | sed ''"
+alias gprevsum="g prevsum | sed ''"
+alias gsubupdate="g subupdate"
+alias gsubmod="g submodule init && g submodule update"
+alias grbc="g rbc"
+
+alias gconflicts="g conflicts"
+alias gconf="g conflicts"
+
+# git-open gitlab
+alias gopen="g open"
+# TODO fork this https://github.com/paulirish/git-open and add options
+# alias gpipe="g pipeline"
+# alias gpipeline="g pipeline"
+# alias gmrs="g mergerequests"
+# alias gmergerequests="g mergerequests"

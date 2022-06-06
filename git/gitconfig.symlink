@@ -1,0 +1,68 @@
+# Local/private config goes in the include
+[include]
+path = ~/.dotfiles/git/gitconfig.local
+path = ~/.dotfiles/git/gitconfig.aliases
+
+[hub]
+protocol = https
+
+[color]
+diff = auto
+status = auto
+branch = auto
+ui = true
+# [color "branch"]
+#         current = green bold
+#         local = green
+#         remote = yellow  
+# [color "diff"]
+#         frag = magenta
+#         meta = yellow
+#         new = green
+#         old = red
+#         newMoved = cyan
+#         oldMoved = blue
+# [color "status"]
+#         added = green reverse
+#         changed = yellow reverse
+#         untracked = red reverse
+
+[core]
+abbrev = 12
+attributesFile = ~/.gitattributes
+autocrlf = input
+editor = code --wait
+excludesFile = ~/.gitignore
+pager=cat
+
+[apply]
+whitespace = nowarn
+
+[mergetool]
+keepBackup = false
+
+[difftool]
+prompt = false
+
+[help]
+autocorrect = 1
+
+[push]
+# See `git help config` (search for push.default)
+# for more information on different options of the below setting.
+#
+# Setting to git 2.0 default to suppress warning message
+default = current
+
+[filter "lfs"]
+clean = git-lfs clean -- %f
+smudge = git-lfs smudge -- %f
+process = git-lfs filter-process
+required = true
+
+[pull]
+rebase = true
+
+[rebase]
+autostash = true
+autosquash = true

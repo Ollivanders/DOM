@@ -1,0 +1,6 @@
+#!/bin/sh
+#
+# Creates something for me to do -> adds it to the desktop
+
+
+touch $DESKTOP_DIR"$*"

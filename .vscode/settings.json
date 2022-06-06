@@ -1,0 +1,51 @@
+{
+  "cSpell.words": [
+    "darglint",
+    "docstrings",
+    "ohmyzzsh",
+    "Organisation",
+    "plugins"
+  ],
+  "search.exclude": {
+    "**/.git": true,
+    "zsh/ohmyzsh": true,
+    "zsh/custom/themes/powerlevel10k": true,
+    "zsh/custom/plugins/": true
+  },
+  "git.autoRepositoryDetection": false,
+//   "git.autoRepositoryDetection": "openEditors",
+  "git.ignoredRepositories": [
+    "zsh/ohmyzsh/plugins",
+    "zsh/ohmyzsh/themes"
+  ],
+  "yaml.customTags": [
+    "!And",
+    "!And sequence",
+    "!If",
+    "!If sequence",
+    "!Not",
+    "!Not sequence",
+    "!Equals",
+    "!Equals sequence",
+    "!Or",
+    "!Or sequence",
+    "!FindInMap",
+    "!FindInMap sequence",
+    "!Base64",
+    "!Join",
+    "!Join sequence",
+    "!Cidr",
+    "!Ref",
+    "!Sub",
+    "!Sub sequence",
+    "!GetAtt",
+    "!GetAZs",
+    "!ImportValue",
+    "!ImportValue sequence",
+    "!Select",
+    "!Select sequence",
+    "!Split",
+    "!Split sequence"
+  ],
+  "python.pythonPath": "/usr/local/bin/python3",
+}
