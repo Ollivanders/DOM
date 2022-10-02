@@ -136,7 +136,7 @@ alias dsp="docker system prune --all"
 alias dsr=dsr-fn
 
 alias drmcontain=delete_all_containers
-alias drmimages=elete_all_images
+alias drmimages=delete_all_images
 
 alias d='docker $*'
 alias d-c='docker-compose $*'

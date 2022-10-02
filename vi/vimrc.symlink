@@ -160,3 +160,6 @@ nnoremap <C-L> :nohl<CR><C-L>
 
 " Wrap gitcommit file types at the appropriate length
 filetype indent plugin on
+
+let @y='ggVGy'
+let @p='ggVGp'

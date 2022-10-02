@@ -14,7 +14,7 @@ ui = true
 # [color "branch"]
 #         current = green bold
 #         local = green
-#         remote = yellow  
+#         remote = yellow
 # [color "diff"]
 #         frag = magenta
 #         meta = yellow
