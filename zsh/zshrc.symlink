@@ -63,7 +63,6 @@ ZSH_CUSTOM=${ZSHPATH}/custom
 if [[ "$OSTYPE" =~ "darwin"* ]]; then # macOS
 plugins=(
   alias-finder
-  auto-ls
   extract
   docker
   git 
@@ -71,6 +70,7 @@ plugins=(
   # thefuck
   # sudo
   zsh-autosuggestions
+  zsh-autocomplete
   zsh-syntax-highlighting 
   # vi-mode
   macos
@@ -78,17 +78,16 @@ plugins=(
 else
 plugins=(
   alias-finder
-  auto-ls
-  extract
   docker
   git 
   history-substring-search
-  # thefuck
   # sudo
   zsh-autosuggestions
+  zsh-autocomplete
   zsh-syntax-highlighting 
   git-open
   # vi-mode
+  git z 
   )
 fi
 
@@ -135,3 +134,5 @@ if [[ -n $INIT_COMMAND ]]; then
     echo "Running: $INIT_COMMAND"
     eval "$INIT_COMMAND"
 fi
+
+export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
