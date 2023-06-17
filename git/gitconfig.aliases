@@ -60,6 +60,8 @@ rlz = "!f() { git commit -m \"🚀 RELEASE: $@\"; }; f"
 doc = "!f() { git commit -m \"📖 DOC: $@\"; }; f"
 tst = "!f() { git commit -m \"🤖 TEST: $@\"; }; f"
 brk = "!f() { git commit -m \"⚠️ BREAKING: $@\"; }; f"
+rem = "!f() { git commit -m \"✄ REMOVE: $@\"; }; f"
+rev = "!f() { git commit -m \"🔁 REVERT: $@\"; }; f"
 
 
 commitref = "!f() { git acmp \"♻️ REFACTOR: $@\"; }; f"
@@ -73,6 +75,8 @@ commitrlz = "!f() { git acmp \"🚀 RELEASE: $@\"; }; f"
 commitdoc = "!f() { git acmp \"📖 DOC: $@\"; }; f"
 committst = "!f() { git acmp \"🤖 TEST: $@\"; }; f"
 commitbrk = "!f() { git acmp \"⚠️ BREAKING: $@\"; }; f"
+commitrem = "!f() { git acmp -m \"✄ REMOVE: $@\"; }; f"
+commitrev = "!f() { git acmp \"🔁 REVERT: $@\"; }; f"
 
 amendref = "!f() { git amp \"♻️ REFACTOR: $@\"; }; f"
 amendadd = "!f() { git amp \"➕ ADD: $@\"; }; f"
@@ -85,6 +89,8 @@ amendrlz = "!f() { git amp \"🚀 RELEASE: $@\"; }; f"
 amenddoc = "!f() { git amp \"📖 DOC: $@\"; }; f"
 amendtst = "!f() { git amp \"🤖 TEST: $@\"; }; f"
 amendbrk = "!f() { git amp \"⚠️ BREAKING: $@\"; }; f"
+ammendrem = "!f() { git amp -m \"✄ REMOVE: $@\"; }; f"
+ammendrev = "!f() { git amp \"🔁 REVERT: $@\"; }; f"
 
 ####################################################################################################
 # Short bois
