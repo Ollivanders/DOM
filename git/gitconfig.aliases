@@ -43,6 +43,11 @@ rbc = "!f(){ git add -A && git rebase --continue; }; f"
 re = "!f(){ DEFAULT=$(git default); git fetch origin && git rebase origin/${1-$DEFAULT}; }; f"
 sync = !git pull --rebase && git push
 
+# stash
+st = "stash"
+stp = "stash pop"
+
+
 ####################################################################################################
 # Commit emojis
 acmp = "!f() { git add .; git commit -m \"$@\"; git push; }; f"
@@ -60,9 +65,13 @@ rlz = "!f() { git commit -m \"🚀 RELEASE: $@\"; }; f"
 doc = "!f() { git commit -m \"📖 DOC: $@\"; }; f"
 tst = "!f() { git commit -m \"🤖 TEST: $@\"; }; f"
 brk = "!f() { git commit -m \"⚠️ BREAKING: $@\"; }; f"
-rem = "!f() { git commit -m \"✄ REMOVE: $@\"; }; f"
+rem = "!f() { git commit -m \"✄🔥 REMOVE: $@\"; }; f"
 rev = "!f() { git commit -m \"🔁 REVERT: $@\"; }; f"
-
+lin = "!f() { git commit -m \"🚨 LINT: $@\"; }; f"
+drunk = "!f() { git commit -m \"🍻 INTOXICATED: $@\"; }; f"
+bump = "!f() { git commit -m \"⬆️ BUMP: $@\"; }; f"
+exp = "!f() { git commit -m \"🧬 EXPERIMENTAL: $@\"; }; f"
+spice = "!f() { git commit -m \"🌶️ SPICY: $@\"; }; f"
 
 commitref = "!f() { git acmp \"♻️ REFACTOR: $@\"; }; f"
 commitadd = "!f() { git acmp \"➕ ADD: $@\"; }; f"
@@ -75,8 +84,13 @@ commitrlz = "!f() { git acmp \"🚀 RELEASE: $@\"; }; f"
 commitdoc = "!f() { git acmp \"📖 DOC: $@\"; }; f"
 committst = "!f() { git acmp \"🤖 TEST: $@\"; }; f"
 commitbrk = "!f() { git acmp \"⚠️ BREAKING: $@\"; }; f"
-commitrem = "!f() { git acmp -m \"✄ REMOVE: $@\"; }; f"
+commitrem = "!f() { git acmp \"✄ REMOVE: $@\"; }; f"
 commitrev = "!f() { git acmp \"🔁 REVERT: $@\"; }; f"
+commitlin = "!f() { git acmp \"🚨 LINT: $@\"; }; f"
+commitdrunk = "!f() { git acmp \"🍻 INTOXICATED: $@\"; }; f"
+commitbump = "!f() { git acmp \"⬆️ BUMP: $@\"; }; f"
+commitexp = "!f() { git acmp \"🧬 EXPERIMENTAL: $@\"; }; f"
+commitspice = "!f() { git acmp \"🌶️ SPICY: $@\"; }; f"
 
 amendref = "!f() { git amp \"♻️ REFACTOR: $@\"; }; f"
 amendadd = "!f() { git amp \"➕ ADD: $@\"; }; f"
@@ -89,8 +103,13 @@ amendrlz = "!f() { git amp \"🚀 RELEASE: $@\"; }; f"
 amenddoc = "!f() { git amp \"📖 DOC: $@\"; }; f"
 amendtst = "!f() { git amp \"🤖 TEST: $@\"; }; f"
 amendbrk = "!f() { git amp \"⚠️ BREAKING: $@\"; }; f"
-ammendrem = "!f() { git amp -m \"✄ REMOVE: $@\"; }; f"
+ammendrem = "!f() { git amp \"✄ REMOVE: $@\"; }; f"
 ammendrev = "!f() { git amp \"🔁 REVERT: $@\"; }; f"
+ammendlin = "!f() { git amp \"🚨 LINT: $@\"; }; f"
+ammenddrunk = "!f() { git amp \"🍻 INTOXICATED: $@\"; }; f"
+ammendbump = "!f() { git amp \"⬆️ BUMP: $@\"; }; f"
+ammendexp = "!f() { git amp \"🧬 EXPERIMENTAL: $@\"; }; f"
+ammendspice = "!f() { git amp \"🌶️ SPICY: $@\"; }; f"
 
 ####################################################################################################
 # Short bois
