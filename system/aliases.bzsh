@@ -59,5 +59,7 @@ alias pcode='tabinto projects code'
 
 alias docgen="python3 <(curl https://raw.githubusercontent.com/Ollivanders/adam/master/main.py)"
 alias cheese="python3 ${DOTFILES}/script/cheese.py"
+alias org="vim ~/org.txt"
+alias corg="code ~/org.txt"
 
 # TODO configure for bash as well (change system directory to .sh or more gen)
