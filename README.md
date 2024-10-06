@@ -1,3 +1,6 @@
+# DEPRECATED 
+https://github.com/Ollivanders/bear
+
 <img src="./docs/images/osSwirl.png" alt="drawing" style="width:300px;float: right"/>
 
 # DOM - Dotfile Organisation Manager
